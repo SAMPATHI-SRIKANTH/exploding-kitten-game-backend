@@ -21,7 +21,7 @@ mongoose
   });
 
 app.get("/", (req, res) => {
-  res.send("<h1>HELLO THIS GAME API</h1>");
+  res.send("<h1>HELLO THIS  GAME API</h1>");
 });
 
 app.post("/register", async (req, res) => {
