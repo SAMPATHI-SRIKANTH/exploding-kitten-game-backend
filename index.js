@@ -41,7 +41,7 @@ app.post("/register", async (req, res) => {
     await newUser.save();
     res
       .status(201)
-      .json({ username: newUser.username, points: newUser.points });
+      .json({ userName: newUser.username, points: newUser.points });
   } catch (err) {
     res.status(500).json({ error: "Failed to register user" });
   }
