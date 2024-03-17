@@ -29,7 +29,15 @@ app.post("/register", async (req, res) => {
   const { username } = req.body;
 
   try {
-    const user = new User({ username });
+    let user = await User.findOne({ username });
+
+    if (user) {
+      // If user already exists, send back the points associated with the username
+      return res
+        .status(200)
+        .json({ userName: user.username, points: user.points });
+    }
+    const newUser = new User({ username });
     await user.save();
     res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
