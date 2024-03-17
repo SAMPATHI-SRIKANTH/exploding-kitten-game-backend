@@ -38,8 +38,10 @@ app.post("/register", async (req, res) => {
         .json({ userName: user.username, points: user.points });
     }
     const newUser = new User({ username });
-    await user.save();
-    res.status(201).json({ message: "User registered successfully" });
+    await newUser.save();
+    res
+      .status(201)
+      .json({ username: newUser.username, points: newUser.points });
   } catch (err) {
     res.status(500).json({ error: "Failed to register user" });
   }
