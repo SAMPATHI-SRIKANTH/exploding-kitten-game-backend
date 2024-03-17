@@ -3,7 +3,7 @@
  This is the documentation for the Exploding Kittens Game API. The API allows users to register, record game scores, and retrieve leaderboard information.
 
 # Base URL
-The base URL for the API is: https://your-base-url.com
+The base URL for the API is: https://exploding-kitten-game-backend-production.up.railway.app/
 
 ## Endpoints
 ### 1. Register User
